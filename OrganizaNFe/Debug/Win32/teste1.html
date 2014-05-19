@@ -1,0 +1,63 @@
+<HTML><HEAD>
+<STYLE TYPE="text/css">
+<!--
+DIV {position:absolute}
+-->
+</STYLE>
+</HEAD>
+<BODY>
+<SCRIPT Language=Javascript>
+var GPageURL = "teste{%PAGENO%}.html";
+var GPageNo = 1;
+var GPageCount = 1;
+
+function GotoPage(APageNo) {
+  location.href = GPageURL.replace(/{%PAGENO%}/,APageNo);
+}
+
+function NextPage() {
+  if (GPageNo < GPageCount)
+    {GotoPage(GPageNo + 1);}
+  else
+    {window.alert("This is the last page.")}
+}
+
+function PrevPage() {
+  if (GPageNo > 1)
+    {GotoPage(GPageNo - 1);}
+  else
+    {window.alert("This is the first page.")}
+}
+
+</SCRIPT>
+</HEAD>
+<BODY>
+<DIV STYLE="left:227;top:19;width:864;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">Relatório</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:319;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;de</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:378;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;Contas</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:401;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;de</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:459;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;&nbsp;E-mail</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:489;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;por</DIV>
+<DIV STYLE="text-align:right;left:0;top:19;width:570;font:normal bold 12,0000003576279pt 'Arial';text-decoration:underline;color:#000000">&nbsp;Empresas</DIV>
+<DIV STYLE="left:19;top:76;width:768;font:normal bold 9,96000015735626pt 'Arial';color:#000000">Empresa:</DIV>
+<DIV STYLE="left:86;top:77;width:672;font:normal normal 9,96000015735626pt 'Arial';color:#000000">Padaria</DIV>
+<DIV STYLE="text-align:right;left:0;top:77;width:159;font:normal normal 9,96000015735626pt 'Arial';color:#000000">&nbsp;Pão</DIV>
+<DIV STYLE="text-align:right;left:0;top:77;width:163;font:normal normal 9,96000015735626pt 'Arial';color:#000000">&nbsp;</DIV>
+<DIV STYLE="left:19;top:105;width:672;font:normal bold 9,96000015735626pt 'Arial';color:#000000">Emails:</DIV>
+<DIV STYLE="left:202;top:76;width:480;font:normal bold 9,96000015735626pt 'Arial';color:#000000">CNPJ:</DIV>
+<DIV STYLE="left:250;top:77;width:1344;font:normal normal 9,96000015735626pt 'Arial';color:#000000">22208537000184</DIV>
+<DIV STYLE="left:19;top:125;width:2688;font:normal normal 9,96000015735626pt 'Arial';color:#000000">testeprogramador10@gmail.com</DIV>
+<DIV STYLE="left:19;top:144;width:2976;font:normal normal 9,96000015735626pt 'Arial';color:#000000">testeprogramador10@yahoo.com.br</DIV>
+<DIV STYLE="left:19;top:182;width:768;font:normal bold 9,96000015735626pt 'Arial';color:#000000">Empresa:</DIV>
+<DIV STYLE="left:86;top:182;width:960;font:normal normal 9,96000015735626pt 'Arial';color:#000000">Pastelaria</DIV>
+<DIV STYLE="text-align:right;left:0;top:182;width:159;font:normal normal 9,96000015735626pt 'Arial';color:#000000">&nbsp;G</DIV>
+<DIV STYLE="left:19;top:211;width:672;font:normal bold 9,96000015735626pt 'Arial';color:#000000">Emails:</DIV>
+<DIV STYLE="left:202;top:182;width:480;font:normal bold 9,96000015735626pt 'Arial';color:#000000">CNPJ:</DIV>
+<DIV STYLE="left:250;top:182;width:1344;font:normal normal 9,96000015735626pt 'Arial';color:#000000">22208537000184</DIV>
+<DIV STYLE="left:19;top:230;width:1728;font:normal normal 9,96000015735626pt 'Arial';color:#000000">teste@teste.com.br</DIV>
+<DIV style="COLOR: #000000; FONT: 10pt 'Arial'; LEFT: 0px; TOP: 326px">
+<HR><P ALIGN=CENTER>
+<A HREF="javascript:PrevPage();">Previous Page</A>
+ --------- 
+<A HREF="javascript:NextPage();">Next Page</A>
+</P></DIV></BODY></HTML>

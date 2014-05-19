@@ -1,0 +1,51 @@
+unit Data;
+
+interface
+
+uses
+  SysUtils, Classes, ZAbstractConnection, ZConnection, Provider, DB, DBClient,
+  ZSqlUpdate, IdIOHandler, IdIOHandlerSocket, IdIOHandlerStack, IdSSL,
+  IdSSLOpenSSL, IdBaseComponent, IdComponent, IdTCPConnection, IdTCPClient,
+  IdExplicitTLSClientServerBase, IdMessageClient, IdPOP3, IdMessage;
+
+type
+  Tdm = class(TDataModule)
+    dbConnection: TZConnection;
+    IdPOP31: TIdPOP3;
+    IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
+    IdMessage1: TIdMessage;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+
+implementation
+
+uses Splash;
+
+{$R *.dfm}
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+  if not dbConnection.Connected then
+  begin
+    dbConnection.Connect;
+  end
+  else
+  begin
+    dbConnection.Disconnect;
+  end;
+
+
+
+
+  // Libera o splash da memória
+  frmSplash.Free;
+end;
+
+end.

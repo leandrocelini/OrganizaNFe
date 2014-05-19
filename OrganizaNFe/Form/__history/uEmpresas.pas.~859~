@@ -1,0 +1,221 @@
+unit uEmpresas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, FormNew, mbFocusColor, DB, ZAbstractRODataset, ZAbstractDataset,
+  ZDataset, JvComponentBase, JvFormPlacement, mbKeyEvent, ImgList, ComCtrls,
+  ToolWin, StdCtrls, Buttons, ExtCtrls, Grids, DBGrids, JvExDBGrids, JvDBGrid,
+  Mask, DBCtrls, mbDialogo, mbFuncoes, RpDefine, RpCon, RpConDS, RpConBDE,
+  DBTables, RpRave, RpBase, RpSystem, RpRender, RpRenderPDF,RvLDCompiler;
+
+type
+  TfrmEmpresas = class(TfrmFormNew)
+    labId: TLabel;
+    Panel1: TPanel;
+    tbConta: TToolBar;
+    tbInclEmail: TToolButton;
+    tbAltlEmailClick: TToolButton;
+    ToolButton7: TToolButton;
+    GridEmails: TDBGrid;
+    qrConta: TZQuery;
+    dsConta: TDataSource;
+    lbCodigo: TLabel;
+    dbEditCodigo: TDBEdit;
+    lbCnpj: TLabel;
+    dbEditCnpj: TDBEdit;
+    lbNome: TLabel;
+    dbEditNome: TDBEdit;
+    qrContaId_ContaEmail: TIntegerField;
+    qrContaFk_Empresa: TIntegerField;
+    qrContaEmail: TWideStringField;
+    qrContaSenha: TWideStringField;
+    qrContaContaPOP3: TWideStringField;
+    qrContaPortaPOP3: TIntegerField;
+    qrContaConexaoSSLPOP3: TBooleanField;
+    qrContaExcluiAposRecebimento: TBooleanField;
+    rvprEmpConta: TRvProject;
+    rvsysEmpConta: TRvSystem;
+    rvdsEmpConta: TRvDataSetConnection;
+    rvdsEmp: TRvDataSetConnection;
+    tbNewId_Empresa: TIntegerField;
+    tbNewCNPJ: TWideStringField;
+    tbNewNome: TWideStringField;
+    RvRenderPDF1: TRvRenderPDF;
+    procedure tbNewAfterScroll(DataSet: TDataSet);
+    procedure tbInclEmailClick(Sender: TObject);
+    procedure tbAltlEmailClickClick(Sender: TObject);
+    procedure btnGravarClick(Sender: TObject);
+    procedure ToolButton7Click(Sender: TObject);
+    procedure tbAtualizarClick(Sender: TObject);
+    procedure tbSairClick(Sender: TObject);
+    procedure tbIncluirClick(Sender: TObject);
+    procedure tbAlterarClick(Sender: TObject);
+    procedure tbImprimirClick(Sender: TObject);
+    procedure qrContaBeforePost(DataSet: TDataSet);
+    procedure tbNewBeforePost(DataSet: TDataSet);
+
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+    acao: Integer;
+  end;
+
+var
+  frmEmpresas: TfrmEmpresas;
+
+implementation
+
+uses Data, uContaEmail;
+
+{$R *.dfm}
+{ TfrmEmpresas }
+
+procedure TfrmEmpresas.btnGravarClick(Sender: TObject);
+var cnpj : string;
+begin
+    cnpj:=trim(dbEditCnpj.Text);
+  // validações nos campos
+  if not mbFuncoes.CNPJ(dbEditCnpj.Text) then begin
+    dbEditCnpj.SetFocus;
+    MessageDlg('CNPJ invalido!',mtInformation,[mbOk],0);
+    Exit;
+  end;
+
+  if Length(dbEditNome.Text) < 1 then begin
+    dbEditNome.SetFocus;
+    MessageDlg('Favor preencher campo Nome!',mtInformation,[mbOk],0);
+    Exit;
+  end;
+
+  dm.dbConnection.StartTransaction;
+  try
+    // Grava os dados da empresa
+    tbNew.Post;
+
+    if qrConta.UpdatesPending then begin
+      qrConta.First;
+      while Not qrConta.Eof do begin
+
+        If (qrContaFk_Empresa.AsInteger <> tbNewid_Empresa.AsInteger) then begin
+          qrConta.Edit;
+          qrContaFk_Empresa.AsInteger := tbNewid_Empresa.AsInteger;
+          qrConta.Post;
+        end;
+
+        qrConta.Next;
+      end;
+
+      qrConta.ApplyUpdates;
+    End;
+
+    dm.dbConnection.Commit;
+
+    inherited
+  Except
+    dm.dbConnection.Rollback;
+  end;
+end;
+
+procedure TfrmEmpresas.qrContaBeforePost(DataSet: TDataSet);
+begin
+   inherited;
+   //limpando espaços em branco
+   qrContaEmail.AsString:= trim(qrContaEmail.AsString);
+   qrContaSenha.AsString:=trim(qrContaSenha.AsString);
+   qrContaContaPOP3.AsString:=trim(qrContaContaPOP3.AsString);
+end;
+
+procedure TfrmEmpresas.tbAlterarClick(Sender: TObject);
+begin
+  inherited;
+  dbEditCnpj.SetFocus;
+end;
+
+procedure TfrmEmpresas.tbAltlEmailClickClick(Sender: TObject);
+begin
+   dbEditCnpj.SetFocus;
+  // verifica se tem dados na grid para liberar botão de alterar
+  if Length(qrContaEmail.Text) > 1 then begin
+    dlgContaEmail := TdlgContaEmail.Create(Application);
+    dlgContaEmail.acao := 1;
+    dlgContaEmail.ShowModal;
+    FreeAndNil(dlgContaEmail);
+  end;
+  inherited;
+end;
+
+procedure TfrmEmpresas.tbAtualizarClick(Sender: TObject);
+begin
+  inherited;
+  // atualiza
+end;
+
+
+procedure TfrmEmpresas.tbImprimirClick(Sender: TObject);
+begin
+rvprEmpConta.Execute;
+
+inherited;
+
+end;
+
+procedure TfrmEmpresas.tbInclEmailClick(Sender: TObject);
+begin
+  dlgContaEmail := TdlgContaEmail.Create(Application);
+  dlgContaEmail.acao := 0;
+  dlgContaEmail.ShowModal;
+  FreeAndNil(dlgContaEmail);
+end;
+
+procedure TfrmEmpresas.tbIncluirClick(Sender: TObject);
+begin
+
+  inherited;
+   dbEditCnpj.SetFocus;
+end;
+
+procedure TfrmEmpresas.tbNewAfterScroll(DataSet: TDataSet);
+begin
+  inherited;
+  qrConta.Active := False;
+  qrConta.ParamByName('id_empresa').AsInteger := tbNewid_Empresa.AsInteger;
+  qrConta.Active := True;
+end;
+
+procedure TfrmEmpresas.tbNewBeforePost(DataSet: TDataSet);
+begin
+  inherited;
+  //limpa espaços em branco
+  tbNewCNPJ.AsString:=trim(tbNewCNPJ.AsString);
+  tbNewNome.AsString:=trim(tbNewNome.AsString);
+end;
+
+procedure TfrmEmpresas.tbSairClick(Sender: TObject);
+begin
+  inherited;
+  close;
+end;
+
+procedure TfrmEmpresas.ToolButton7Click(Sender: TObject);
+begin
+  // inherited;
+
+  // verifica se tem dados na grid para liberar botão de alterar
+  if Length(qrContaEmail.Text) > 1 then begin
+
+    If ShowMsgExclusao Then begin
+      If MessageDlg('Confirma exclusão do registro???', mtConfirmation,[mbYes, mbNo], 0) <> mrNo Then begin;
+        If (qrConta.RecordCount > 0) then begin
+          qrConta.Delete;
+        End;
+      End;
+    End;
+  End;
+
+end;
+
+end.

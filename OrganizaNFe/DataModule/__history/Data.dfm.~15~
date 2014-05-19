@@ -1,0 +1,42 @@
+object dm: Tdm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 452
+  Width = 652
+  object dbConnection: TZConnection
+    Properties.Strings = (
+      'select * from Empresas')
+    Connected = True
+    Port = 0
+    Database = 'D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\orgarnizenf.db'
+    Protocol = 'sqlite-3'
+    Left = 48
+    Top = 16
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 152
+    Top = 24
+  end
+  object DataSetProvider1: TDataSetProvider
+    Left = 152
+    Top = 72
+  end
+  object IdPOP31: TIdPOP3
+    AutoLogin = True
+    SASLMechanisms = <>
+    Left = 280
+    Top = 16
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 280
+    Top = 72
+  end
+end

@@ -1,0 +1,15 @@
+object dm: Tdm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 452
+  Width = 652
+  object dbConnection: TZConnection
+    Properties.Strings = (
+      'select * from Empresas')
+    Port = 0
+    Database = 'D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\orgarnizenf.db'
+    Protocol = 'sqlite-3'
+    Left = 48
+    Top = 16
+  end
+end

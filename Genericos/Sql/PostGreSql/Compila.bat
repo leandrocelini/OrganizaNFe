@@ -1,0 +1,2 @@
+BRCC32 FuncoesPostGreSql.RC
+Pause

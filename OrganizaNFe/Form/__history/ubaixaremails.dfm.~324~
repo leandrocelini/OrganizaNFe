@@ -1,0 +1,401 @@
+inherited dlgBaixarEmails: TdlgBaixarEmails
+  Caption = 'Baixar Anexo Emails '
+  ClientHeight = 541
+  ClientWidth = 768
+  OnShow = FormShow
+  ExplicitWidth = 774
+  ExplicitHeight = 569
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ListViewBaixar: TListView [0]
+    Left = 8
+    Top = 246
+    Width = 752
+    Height = 248
+    Columns = <
+      item
+        AutoSize = True
+        Caption = 'Remetente'
+      end
+      item
+        AutoSize = True
+        Caption = 'Assunto'
+      end>
+    SortType = stText
+    TabOrder = 3
+    ViewStyle = vsReport
+  end
+  object ProgressBar1: TProgressBar [1]
+    Left = 8
+    Top = 218
+    Width = 752
+    Height = 17
+    TabOrder = 2
+  end
+  object MemoEmails: TMemo [2]
+    Left = 8
+    Top = 111
+    Width = 752
+    Height = 82
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'MS Sans Serif'
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      '')
+    ParentFont = False
+    TabOrder = 1
+  end
+  object panelRodape: TPanel [3]
+    Left = 0
+    Top = 500
+    Width = 768
+    Height = 41
+    Align = alBottom
+    TabOrder = 4
+    object bitBaixarEmailsClick: TBitBtn
+      Left = 280
+      Top = 8
+      Width = 97
+      Height = 25
+      Caption = '&Baixar Emails'
+      DoubleBuffered = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000000000000000000000000000000000000C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        005F7F005F7F005F7F005F7F005F7F005F7F005F7F005F7F005F7F005F7F005F
+        7F005F7F005F7F005F7FC8C8C8C8C8C8005F7F0085B20CB2EA02AEE801ADE701
+        ADE701ADE701ADE701ADE701ADE702AEE80CB2EA0085B2005F7FC8C8C8C8C8C8
+        005F7F0DAADF0085B20FB7EF05B1EB04B0EA04B0EA04B0EA04B0EA05B1EB0FB7
+        EF0085B20DAADF005F7F005F7F005F7F0085B208B4EE34BFEE0085B271D1F276
+        D2F15877814164701AB4E80EB2EA0085B20FB4EC08B4EE0085B2005F7F0085B2
+        0085B25FCFF475D5F678D2F10085B270889078D7F778D7F76B838B0085B20FB0
+        E70AB6F00AB6F00085B2005F7F0DAADF0085B278D7F878D7F879D6F572888F79
+        D3F278D7F878D7F879D4F3617A8131BEEE0DB9F30DB9F30085B20085B208B4EE
+        0085B279D9F97AD7F6728F997AD6F579D9F979D9F979D9F979D9F97AD6F53B65
+        7311B6EE10BCF60085B20085B25FCFF40085B27BD4F274919A7CD8F67DDBFB7D
+        DBFB7DDBFB7DDBFB7DDBFB6DD7FB47C8F40085B211AFE50085B20085B278D7F8
+        0085B26E7B7F7ED7F67EDCFC7FDDFC7FDDFC7FDDFC7FDDFC79DCFC56D2FC36C9
+        FB13B8F00085B20085B20085B279D9F90085B20085B20085B20085B20085B200
+        85B20085B20085B20085B20085B20085B20085B20085B20085B20085B27BD4F2
+        74919A7CD8F67DDBFB7DDBFB7DDBFB7DDBFB7DDBFB6DD7FB47C8F40085B211AF
+        E50085B2C8C8C8C8C8C80085B26E7B7F7ED7F67EDCFC7FDDFC7FDDFC7FDDFC7F
+        DDFC79DCFC56D2FC36C9FB13B8F00085B20085B2C8C8C8C8C8C80085B20085B2
+        0085B20085B20085B20085B20085B20085B20085B20085B20085B20085B20085
+        B20085B2C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8}
+      ParentDoubleBuffered = False
+      TabOrder = 0
+      OnClick = bitBaixarEmailsClickClick
+    end
+    object btnCancelar: TBitBtn
+      Left = 399
+      Top = 8
+      Width = 83
+      Height = 25
+      Caption = '&Cancelar'
+      DoubleBuffered = True
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        1800000000000003000000000000000000000000000000000000C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8808080808080808080C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C88080
+        8000007F00007FC8C8C8C8C8C8C8C8C8C8C8C800007F00007FC8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C800007F000088000087C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C80000E50000B200007FC8C8C8C8C8C8C8C8C8C8C8C800007F0000910000
+        90C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C80000E50000B200007FC8
+        C8C8C8C8C800007F00009A000098C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C80000E50000B200007F00007F0000A40000A1C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C80000E500
+        00B20000AD0000A9C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C80000B200007F0000B60000B200007F00007FC8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C80000B200007F0000BF00
+        00BA0000E50000B200007F00007FC8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C800007F00007F0000C90000C3C8C8C8C8C8C80000E50000B200007F0000
+        7FC8C8C8C8C8C8C8C8C8C8C8C8C8C8C800007F00007F0000D20000CBC8C8C8C8
+        C8C8C8C8C8C8C8C80000E50000B200007F00007FC8C8C8C8C8C8C8C8C800007F
+        00007F0000DB0000D4C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C80000E50000
+        B200007F808080C8C8C8C8C8C800007F0000E50000DCC8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C80000E50000E5808080C8C8C8C8C8C8808080
+        0000E5C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8
+        C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8C8}
+      ParentDoubleBuffered = False
+      TabOrder = 1
+      OnClick = btnCancelarClick
+    end
+  end
+  object panelTopo: TPanel [4]
+    Left = 0
+    Top = 0
+    Width = 768
+    Height = 89
+    Align = alTop
+    TabOrder = 0
+    object lbEmpresas: TLabel
+      Left = 8
+      Top = 20
+      Width = 53
+      Height = 13
+      Caption = '&Empresa:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lbEmails: TLabel
+      Left = 8
+      Top = 57
+      Width = 41
+      Height = 13
+      Caption = '&Emails:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object lbMostraArquivos: TLabel
+      Left = 478
+      Top = 16
+      Width = 4
+      Height = 18
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+    end
+    object dbEmpresa: TJvDBLookupCombo
+      Left = 67
+      Top = 20
+      Width = 693
+      Height = 21
+      DisplayAllFields = True
+      DisplayEmpty = 'Todas'
+      LookupField = 'id_Empresa'
+      LookupDisplay = 'Nome'
+      LookupSource = dsEmpresa
+      TabOrder = 0
+    end
+    object dbEmails: TJvDBLookupCombo
+      Left = 67
+      Top = 57
+      Width = 693
+      Height = 21
+      DisplayAllFields = True
+      DisplayEmpty = 'Todos'
+      LookupField = 'id_ContaEmail'
+      LookupDisplay = 'Email'
+      LookupSource = dsEmails
+      TabOrder = 1
+    end
+  end
+  inherited mbKeyEvent1: TmbKeyEvent
+    Left = 344
+    Top = 280
+  end
+  object IdPOP31: TIdPOP3
+    AutoLogin = True
+    SASLMechanisms = <>
+    Left = 288
+    Top = 280
+  end
+  object IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL
+    MaxLineAction = maException
+    Port = 0
+    DefaultPort = 0
+    SSLOptions.Mode = sslmUnassigned
+    SSLOptions.VerifyMode = []
+    SSLOptions.VerifyDepth = 0
+    Left = 288
+    Top = 344
+  end
+  object IdMessage1: TIdMessage
+    AttachmentEncoding = 'UUE'
+    BccList = <>
+    CCList = <>
+    Encoding = meDefault
+    FromList = <
+      item
+      end>
+    Recipients = <>
+    ReplyTo = <>
+    ConvertPreamble = True
+    Left = 336
+    Top = 344
+  end
+  object dsBuscaIdConta: TDataSource
+    DataSet = qrBuscaIdConta
+    Left = 232
+    Top = 280
+  end
+  object qrBuscaIdConta: TZQuery
+    Connection = dm.dbConnection
+    SQL.Strings = (
+      'select * from ContaEmail where id_ContaEmail = :idcontaemail'
+      '')
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'idcontaemail'
+        ParamType = ptUnknown
+      end>
+    Left = 232
+    Top = 344
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'idcontaemail'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsBuscEmp: TDataSource
+    DataSet = qrBuscEmp
+    Left = 176
+    Top = 280
+  end
+  object qrBuscEmp: TZQuery
+    Connection = dm.dbConnection
+    SQL.Strings = (
+      'select nome,cnpj from Empresas where id_empresa  = :idempresa'
+      '')
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'idempresa'
+        ParamType = ptUnknown
+      end>
+    Left = 176
+    Top = 344
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'idempresa'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrEmpresa: TZQuery
+    Connection = dm.dbConnection
+    AfterScroll = qrEmpresaAfterScroll
+    SQL.Strings = (
+      'Select Id_Empresa,'
+      '       Nome'
+      '       From Empresas'
+      '       Order By upper(Nome)')
+    Params = <>
+    Left = 120
+    Top = 280
+    object qrEmpresaid_Empresa: TIntegerField
+      FieldName = 'id_Empresa'
+    end
+    object qrEmpresaNome: TWideStringField
+      FieldName = 'Nome'
+      Size = 60
+    end
+  end
+  object dsEmpresa: TDataSource
+    DataSet = qrEmpresa
+    Left = 72
+    Top = 280
+  end
+  object dsEmails: TDataSource
+    DataSet = qrEmails
+    Left = 72
+    Top = 416
+  end
+  object qrEmails: TZQuery
+    Connection = dm.dbConnection
+    SQL.Strings = (
+      
+        'select email, id_ContaEmail from ContaEmail where fk_Empresa = :' +
+        'id_empresa')
+    Params = <
+      item
+        DataType = ftUnknown
+        Name = 'id_empresa'
+        ParamType = ptUnknown
+      end>
+    Left = 120
+    Top = 416
+    ParamData = <
+      item
+        DataType = ftUnknown
+        Name = 'id_empresa'
+        ParamType = ptUnknown
+      end>
+  end
+  object qrEmpConta: TZQuery
+    Connection = dm.dbConnection
+    SQL.Strings = (
+      
+        'select email,nome,id_empresa,id_ContaEmail,cnpj from ContaEmail ' +
+        'c '
+      'inner join Empresas e on e.id_Empresa = c.fk_empresa ')
+    Params = <>
+    Left = 120
+    Top = 344
+    object qrEmpContaEmail: TWideStringField
+      FieldName = 'Email'
+      Size = 100
+    end
+    object qrEmpContaNome: TWideStringField
+      FieldName = 'Nome'
+      Size = 60
+    end
+    object qrEmpContaid_Empresa: TIntegerField
+      FieldName = 'id_Empresa'
+    end
+    object qrEmpContaid_ContaEmail: TIntegerField
+      FieldName = 'id_ContaEmail'
+    end
+    object qrEmpContacnpj: TWideStringField
+      FieldName = 'cnpj'
+      Size = 14
+    end
+  end
+  object dsEmpConta: TDataSource
+    DataSet = qrEmpConta
+    Left = 72
+    Top = 344
+  end
+  object JvThread: TJvThread
+    Exclusive = True
+    MaxCount = 0
+    RunOnCreate = False
+    FreeOnTerminate = True
+    OnExecute = JvThreadExecute
+    Left = 400
+    Top = 280
+  end
+  object mbMsgWait: TmbMsgWait
+    Mensagem = 'Aguarde, verificando o(s) email(s)...'
+    Animate = True
+    BloqueiaForm = True
+    Left = 400
+    Top = 344
+  end
+  object qrConf: TZQuery
+    Connection = dm.dbConnection
+    SQL.Strings = (
+      'select  *  from config')
+    Params = <>
+    Left = 176
+    Top = 416
+  end
+  object dsConf: TDataSource
+    DataSet = qrConf
+    Left = 224
+    Top = 416
+  end
+end

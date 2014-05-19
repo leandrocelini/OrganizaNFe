@@ -1,0 +1,4 @@
+Pesquisa_Tabela                    		FUNC_POSTGRESQL Pesquisa_Tabela.sql
+ShowTables					FUNC_POSTGRESQL ShowTables.sql
+ShowTriggers					FUNC_POSTGRESQL ShowTriggers.sql
+Sem_Acento					FUNC_POSTGRESQL Sem_Acento.sql

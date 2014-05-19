@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2012/08/16 10:24:52.000.700,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/16 10:25:14.000.794,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/16 10:26:56.000.209,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uEmpresas.pas</Transaction>
+    <Transaction>2012/08/16 10:26:56.000.209,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uEmpresas.dfm</Transaction>
+    <Transaction>2012/08/16 11:17:32.000.703,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit2.pas</Transaction>
+    <Transaction>2012/08/20 15:32:35.000.544,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/20 15:33:47.000.852,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/20 15:33:47.000.852,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm</Transaction>
+    <Transaction>2012/08/20 16:22:25.000.623,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/20 16:22:47.000.973,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/20 16:23:10.000.048,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/20 16:23:10.000.048,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm</Transaction>
+    <Transaction>2012/08/22 09:20:23.000.010,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/22 09:21:27.000.057,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/22 09:21:27.000.057,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uContaEmail.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm</Transaction>
+    <Transaction>2012/08/24 09:32:23.000.176,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/08/24 09:33:45.000.838,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\ubaixaremails.dfm</Transaction>
+    <Transaction>2012/08/24 09:33:45.000.838,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\ubaixaremails.pas</Transaction>
+    <Transaction>2012/09/21 10:53:49.000.598,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/09/21 10:54:13.000.258,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uConfig.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm</Transaction>
+    <Transaction>2012/09/21 10:54:13.000.258,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uConfig.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/09/21 11:13:48.000.583,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas</Transaction>
+    <Transaction>2012/09/21 11:14:15.000.671,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.pas=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uConfig.pas</Transaction>
+    <Transaction>2012/09/21 11:14:15.000.671,D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Unit1.dfm=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\Form\uConfig.dfm</Transaction>
+    <Transaction>2012/09/24 16:58:37.000.355,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\teste.pas</Transaction>
+    <Transaction>2012/09/24 16:59:30.000.068,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\teste.pas</Transaction>
+    <Transaction>2012/09/24 17:00:41.000.749,=D:\FONTES\DELPHI\DELPHIXE\OrganizaNFe\teste.pas</Transaction>
+  </Transactions>
+</BorlandProject>
